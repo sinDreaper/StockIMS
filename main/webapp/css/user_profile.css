@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/* Ensure this class wraps the entire page content in the JSP */
+.profile-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #0b0b1a; /* Base dark background */
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header/Footer styling comes from their respective CSS */
+
+.profile-main-content {
+    flex-grow: 1;
+    max-width: 900px;
+    margin: 40px auto; /* Center content */
+    padding: 40px 50px; /* More padding */
+    background-color: #1f1f3a; /* Panel background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Profile Header Section */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px; /* More space below header */
+    border-bottom: 1px solid #444; /* Softer border */
+}
+
+.profile-avatar {
+    width: 90px; /* Larger avatar */
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6200ea, #7e3ff2); /* Gradient background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8em; /* Larger initials */
+    font-weight: 600; /* Bolder initials */
+    margin-right: 30px; /* More space */
+    flex-shrink: 0;
+    text-transform: uppercase; /* Ensure initials are uppercase */
+}
+
+.profile-info h1 {
+    margin: 0 0 8px 0; /* Space below name */
+    color: #fff;
+    font-size: 2em; /* Larger name */
+    font-weight: 600;
+}
+
+.profile-info p {
+    margin: 0 0 5px 0; /* Space between lines */
+    color: #aaa;
+    font-size: 1em; /* Standard text size */
+}
+.profile-info .verified {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-left: 8px;
+    font-size: 0.9em;
+    vertical-align: middle; /* Align better with text */
+}
+.profile-info .verified::before {
+    content: "\f058"; /* FontAwesome check-circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 4px;
+}
+
+/* Form Section */
+.profile-form-section h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 1.6em; /* Larger section title */
+    font-weight: 600;
+    padding-bottom: 10px;
+    /* Optional: border-bottom: 1px solid #444; */
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Increased gap */
+    margin-bottom: 25px;
+}
+
+.profile-form-section label {
+    display: block;
+    margin-bottom: 10px; /* More space below label */
+    font-weight: 500;
+    color: #bbb;
+    font-size: 0.95em; /* Slightly larger label */
+}
+
+/* Input and Textarea Styling */
+.profile-form-section input[type=text],
+.profile-form-section input[type=email],
+.profile-form-section input[type=tel],
+.profile-form-section input[type=date], /* Added date */
+.profile-form-section textarea {
+    width: 100%;
+    padding: 14px 18px; /* More padding */
+    background-color: #333; /* Dark input background */
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.profile-form-section input:focus,
+.profile-form-section textarea:focus {
+     outline: none;
+     border-color: #6200ea; /* Highlight focus */
+     background-color: #3a3a4a; /* Slightly lighter focus background */
+}
+.profile-form-section input:disabled {
+    background-color: #2a2a3e;
+    cursor: not-allowed;
+    color: #888;
+    border-color: #444;
+}
+
+.profile-form-section textarea {
+    resize: vertical;
+    min-height: 100px; /* Taller textarea */
+    line-height: 1.6;
+}
+
+/* Full Width Element (e.g., About Me) */
+.form-full-width {
+    margin-bottom: 30px; /* Consistent spacing */
+    /* grid-column: 1 / -1; /* Use if inside .form-grid */
+}
+
+/* Form Actions (Buttons) */
+.form-actions {
+    margin-top: 40px; /* More space above buttons */
+    padding-top: 25px;
+    border-top: 1px solid #444;
+    text-align: right; /* Align buttons right */
+    display: flex; /* Use flex for better alignment/spacing */
+    justify-content: flex-end;
+    gap: 15px; /* Space between buttons */
+}
+
+.form-actions button {
+    padding: 12px 30px; /* Larger buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.cancel-button {
+    background-color: #444;
+    color: #ccc;
+}
+.cancel-button:hover { background-color: #555; color: #fff;}
+
+.save-button {
+    background-color: #6200ea; /* Accent color */
+    color: #fff;
+}
+.save-button:hover { background-color: #7e3ff2; }
+.save-button:disabled {
+     background-color: #4a4a5a; /* Disabled color */
+     cursor: not-allowed;
+     opacity: 0.6;
+}
+
+
+/* Messages */
+.message {
+    padding: 12px 15px;
+    margin-bottom: 25px; /* Space below messages */
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+.success-message {
+    background-color: rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+.error-message {
+    background-color: rgba(255, 77, 77, 0.15);
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Footer is styled by footer.css */

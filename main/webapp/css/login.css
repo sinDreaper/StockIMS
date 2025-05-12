@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a2e; /* Dark background from mockups */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Or specific font from mockup */
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    background-color: #ffffff; /* White background for the main container */
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    overflow: hidden; /* Important for rounded corners and layout */
+    width: 768px; /* Approx width from mockup */
+    max-width: 90%;
+    min-height: 480px; /* Approx height */
+    position: relative; /* Needed for absolute positioning of panels if using transitions */
+}
+
+.login-form-container, .login-panel-container {
+    flex: 1; /* Each takes half the space */
+    padding: 50px 40px; /* Adjust padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Form Side (Left in Login Mockup) */
+.login-form-container {
+    background-color: #ffffff; /* White */
+    color: #333; /* Dark text */
+}
+
+.login-form-container h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.social-login {
+    margin: 15px 0;
+}
+
+.social-login .social-icon {
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #333; /* Icon color */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.social-login .social-icon:hover {
+    background-color: #eee; /* Light hover */
+}
+.social-login .social-icon i {
+    /* Adjust icon color if needed, FontAwesome usually inherits */
+}
+
+.login-form-container span {
+    font-size: 12px;
+    color: #aaa; /* Light grey text */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left; /* Align labels left */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #555; /* Label color */
+    font-weight: 500;
+}
+.input-group label i {
+    margin-right: 5px;
+    color: #888; /* Icon color next to label */
+}
+
+.input-group input {
+    background-color: #eee; /* Light grey input background */
+    border: none; /* Remove default border */
+    padding: 12px 15px;
+    width: 100%;
+    border-radius: 5px;
+    color: #333; /* Input text color */
+    box-sizing: border-box;
+}
+.input-group input:focus {
+    outline: none;
+    background-color: #e0e0e0; /* Slightly darker on focus */
+}
+
+.forgot-password {
+    color: #555; /* Link color */
+    font-size: 13px;
+    text-decoration: none;
+    margin: 10px 0 20px 0;
+    display: inline-block;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-button, .panel-button {
+    border-radius: 20px; /* Pill shape */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in, background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 1px solid; /* Prepare for border */
+}
+.login-button:active, .panel-button:active {
+    transform: scale(0.95);
+}
+.login-button:focus, .panel-button:focus {
+    outline: none;
+}
+
+/* Specific button styles from mockup */
+.login-button { /* Sign In button */
+    background-color: #FF4B2B; /* Orange-red */
+    border-color: #FF4B2B;
+    color: #FFFFFF;
+}
+.login-button:hover {
+    background-color: #ff416c; /* Slightly different shade on hover */
+    border-color: #ff416c;
+}
+
+/* Panel Side (Right in Login Mockup) */
+.login-panel-container {
+    background: #FF4B2B; /* Base color */
+    background: -webkit-linear-gradient(to right, #FF416C, #FF4B2B); /* Gradient */
+    background: linear-gradient(to right, #FF416C, #FF4B2B); /* Standard Gradient */
+    color: #fff; /* White text */
+}
+
+.login-panel-container h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.login-panel-container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 30px 0; /* More bottom margin */
+}
+
+.panel-button { /* Sign Up button on login page panel */
+     background-color: transparent; /* Transparent background */
+     border-color: #FFFFFF; /* White border */
+     color: #FFFFFF;
+}
+.panel-button:hover {
+    background-color: rgba(255,255,255, 0.1); /* Slight white overlay on hover */
+}
+
+/* Error/Success Messages */
+.error-message, .success-message {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: -5px 0 15px 0; /* Adjust position */
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+.error-message {
+    color: #D8000C; /* Red */
+    background-color: #FFD2D2; /* Light red background */
+    border: 1px solid #D8000C;
+}
+.success-message {
+    color: #4F8A10; /* Green */
+    background-color: #DFF2BF; /* Light green background */
+    border: 1px solid #4F8A10;
+}

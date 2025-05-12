@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+/* Styles for the landing.jsp */
+
+body.landing-body {
+    background-color: #0B0B1A; /* Match screenshot dark background */
+    color: #e0e0e0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, /* System fonts */
+                 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                 'Droid Sans', 'Helvetica Neue', sans-serif; /* Standard sans-serif stack */
+    margin: 0;
+    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header/Footer styling comes from their respective CSS via <link> */
+
+.landing-main {
+    flex-grow: 1;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px 80px 20px;
+    /* Use a very dark background, maybe slightly lighter than body */
+    background-color: #11111d; /* Slightly lighter than pure black/dark blue */
+    color: #fff;
+    /* Remove background image if not desired */
+    /* background: linear-gradient(rgba(18, 18, 31, 0.85), rgba(18, 18, 31, 0.95)), url('../images/hero-background.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center center; */
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 600; /* Slightly less heavy than 700 */
+    letter-spacing: -0.5px;
+     /* Uncomment if Serif font IS desired for headings */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.hero-section p {
+    font-size: 1.2em; /* Slightly smaller than before */
+    margin-bottom: 45px; /* More space before buttons */
+    color: #a0a0c0; /* Lighter grey */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-buttons .cta-button {
+    text-decoration: none;
+    padding: 12px 35px; /* Adjust padding */
+    border-radius: 8px; /* Less rounded, more like screenshot */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    border: 2px solid;
+    font-size: 1em;
+    line-height: 1.4; /* Ensure consistent height */
+    min-width: 150px; /* Ensure buttons have some width */
+}
+
+/* Login Button in Hero (Solid Purple) */
+.cta-buttons .cta-button.primary {
+    background-color: #6f42c1; /* Adjust purple to match screenshot if needed */
+    border-color: #6f42c1;
+    color: #fff;
+}
+.cta-buttons .cta-button.primary:hover {
+    background-color: #8054d4; /* Lighter purple on hover */
+    border-color: #8054d4;
+    transform: translateY(-2px);
+    /* box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); */ /* Optional shadow */
+}
+
+/* Register Button in Hero (Outlined Light) */
+.cta-buttons .cta-button.secondary {
+    background-color: transparent;
+    border-color: #a0a0c0; /* Use the paragraph color for border */
+    color: #a0a0c0; /* Use the paragraph color for text */
+}
+.cta-buttons .cta-button.secondary:hover {
+    background-color: rgba(160, 160, 192, 0.1); /* Subtle background on hover */
+    border-color: #fff; /* White border on hover */
+    color: #fff; /* White text on hover */
+    transform: translateY(-2px);
+}
+
+
+/* Features Section */
+.features-section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #0B0B1A; /* Match body dark */
+}
+
+.features-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    color: #fff;
+    font-weight: 600;
+     /* Uncomment if Serif font IS desired for headings */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    background-color: #161625; /* Darker feature card background */
+    padding: 35px 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2a2a3e;
+}
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+.feature-item i {
+    font-size: 2.8em;
+    color: #6f42c1; /* Match button purple */
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    color: #eee;
+    margin-bottom: 15px;
+    font-weight: 600;
+     /* Uncomment if Serif font IS desired for headings */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.feature-item p {
+    color: #a0a0c0; /* Match hero paragraph color */
+    line-height: 1.7;
+    font-size: 0.95em;
+}
+
+/* Footer styling comes from footer.css */

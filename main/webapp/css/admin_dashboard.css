@@ -1,0 +1,404 @@
+@charset "UTF-8";
+
+/* --- Base Page Styles --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0b0b1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Overall Dashboard Container --- */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Placement --- */
+.app-header {
+    width: 100%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #1f1f3a;
+    border-bottom: 1px solid #333;
+    height: 60px;
+    box-sizing: border-box;
+    /* Internal styling comes from header.css */
+}
+
+/* --- Dashboard Body (Sidebar + Main Content) --- */
+.dashboard-body {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background-color: #12121f;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #2a2a3e;
+    color: #a0a0c0;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+    position: sticky;
+    top: 60px;
+}
+
+.sidebar h3 { /* "ChainX Admin" title in sidebar */
+    color: #fff;
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 0 25px;
+    font-size: 1.4em; /* Adjust size */
+    font-weight: 600;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allow nav to take up space */
+}
+
+.sidebar nav li a {
+    display: flex;
+    align-items: center;
+    color: #a0a0c0;
+    text-decoration: none;
+    padding: 13px 25px;
+    margin-bottom: 3px;
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-left-color 0.2s ease;
+    font-size: 0.95em;
+}
+.sidebar nav li a i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #777799;
+    transition: color 0.2s ease;
+}
+.sidebar nav li a:hover {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+.sidebar nav li a:hover i { color: #fff; }
+.sidebar nav li a.active {
+    background-color: #1f1f3a;
+    color: #fff;
+    border-left-color: #6200ea; /* Accent color */
+    font-weight: 500;
+}
+.sidebar nav li a.active i { color: #6200ea; }
+
+.sidebar .sidebar-bottom {
+    margin-top: auto; /* Pushes this section to the bottom */
+    padding: 15px 25px 20px 25px;
+    border-top: 1px solid #2a2a3e;
+}
+
+/* Dark Mode Toggle Styles */
+.dark-mode-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 15px; color: #a0a0c0; font-size: 0.9em;
+}
+.dark-mode-toggle i { margin-right: 10px; }
+/* Basic Switch Style */
+.switch { position: relative; display: inline-block; width: 34px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #555; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #6200ea; } /* Accent color when checked */
+input:checked + .slider:before { transform: translateX(14px); }
+/* Add .round class if needed: .slider.round { border-radius: 34px; } .slider.round:before { border-radius: 50%; } */
+
+
+/* Logout Button in Sidebar */
+.logout-button-sidebar {
+    background: none; border: none; color: #ff6b6b; cursor: pointer;
+    font-size: 0.95em; padding: 10px 0; width: 100%; text-align: left;
+    display: flex; align-items: center; transition: color 0.2s ease;
+}
+.logout-button-sidebar i { margin-right: 10px; width: 20px; text-align: center;}
+.logout-button-sidebar:hover { color: #ff4d4d; }
+
+
+/* --- Main Content Area --- */
+.main-content {
+    flex-grow: 1;
+    padding: 25px 35px;
+    overflow-y: auto;
+    background-color: #0b0b1a;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+.content-header h1 {
+     margin: 0;
+     color: #fff;
+     font-size: 1.8em;
+     font-weight: 600;
+}
+
+/* Add New Button Style */
+.add-new-button {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.add-new-button i { margin-right: 8px; }
+.add-new-button:hover { background-color: #7e3ff2; }
+
+
+/* Table Styles */
+.table-container {
+    background-color: #1f1f3a; /* Panel background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    overflow-x: auto; /* Allow horizontal scroll on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Prevent excessive wrapping on small screens */
+}
+
+th, td {
+    padding: 14px 15px; /* More padding */
+    text-align: left;
+    border-bottom: 1px solid #2a2a3e; /* Softer separator */
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #12121f; /* Darker header background */
+    color: #aaa;
+    font-weight: 600; /* Bold header text */
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #333; /* Stronger header bottom border */
+}
+
+td { color: #ccc; }
+
+tbody tr:hover {
+    background-color: #2a2a3e; /* Row hover effect */
+}
+
+/* Status indicator */
+.status {
+    padding: 5px 12px; /* Adjust padding */
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block; /* Ensure background covers only text */
+    text-transform: capitalize;
+}
+.status-active { background-color: rgba(76, 175, 80, 0.2); color: #4CAF50; }
+.status-inactive { background-color: rgba(255, 77, 77, 0.2); color: #ff4d4d; }
+
+
+/* Action Buttons in Table */
+.action-button {
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1.2em; /* Larger icons */
+    margin-right: 8px;
+    padding: 6px; /* Increase clickable area */
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.action-button:last-child { margin-right: 0; }
+.action-button:hover { color: #fff; background-color: #333; }
+.edit-button:hover { color: #7e3ff2; } /* Accent for edit */
+.delete-button:hover { color: #ff4d4d; } /* Red for delete */
+
+
+/* Pagination */
+.pagination {
+    margin-top: 25px;
+    text-align: right;
+}
+.pagination button {
+    background-color: #2a2a3e; /* Match row hover */
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 6px 12px; /* Adjust padding */
+    margin: 0 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.pagination button:hover:not(:disabled) {
+     background-color: #6200ea;
+     border-color: #6200ea;
+     color: #fff;
+}
+.pagination button:disabled {
+    background-color: #1f1f3a;
+    color: #666;
+    cursor: default;
+    border-color: #333;
+}
+.pagination span { margin: 0 12px; color: #aaa; font-size: 0.9em; }
+
+
+/* Messages (Success/Error) */
+.message {
+    padding: 12px 15px; /* Slightly more padding */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 0.9em;
+}
+.success-message {
+    background-color: rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+.error-message {
+    background-color: rgba(255, 77, 77, 0.15);
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* --- Modal Styles (Moved from JSP) --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+    background-color: #1f1f3a; /* Dark background for modal */
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 30px 40px; /* More padding */
+    border: 1px solid #444; /* Subtle border */
+    width: 65%; /* Adjust width */
+    max-width: 750px; /* Max width */
+    border-radius: 8px;
+    color: #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 32px; /* Larger close icon */
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px; /* Space below title */
+    color: #fff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; /* Slightly bolder labels */
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.modal-content input[type=text],
+.modal-content input[type=number],
+.modal-content input[type=date],
+.modal-content select {
+    width: 100%; /* Full width within grid */
+    padding: 12px 15px; /* Comfortable padding */
+    margin-bottom: 18px; /* Space below inputs */
+    border: 1px solid #555;
+    border-radius: 5px; /* Rounded inputs */
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+}
+.modal-content input:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #6200ea; /* Highlight on focus */
+}
+
+.modal-content button[type=submit] {
+    background-color: #6200ea;
+    color: white;
+    padding: 12px 25px; /* Button padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above button */
+}
+.modal-content button[type=submit]:hover {
+    background-color: #7e3ff2;
+}
+
+/* Form Grid for Modals */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px 30px; /* Row and column gap */
+}
+/* Optional: Make specific fields full width if needed */
+.form-grid .full-width {
+    grid-column: 1 / -1; /* Span across all columns */
+}

@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+/* Ensure this class wraps the entire page content in the JSP */
+.page-container {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: #0b0b1a;
+   color: #e0e0e0;
+   font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header/Footer styling comes from their respective CSS */
+
+.main-content.contact-us-content {
+    flex-grow: 1;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px 50px;
+    background-color: #1f1f3a; /* Panel background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.contact-us-content h1 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.contact-us-content .intro-text {
+    color: #aaa;
+    margin-bottom: 50px; /* More space */
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
+/* Messages */
+.message {
+    padding: 12px 15px;
+    margin-bottom: 30px; /* More space below messages */
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+.success-message {
+    background-color: rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+.error-message {
+    background-color: rgba(255, 77, 77, 0.15);
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Contact Info Grid */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjust minmax */
+    gap: 40px; /* More gap */
+    margin-bottom: 60px; /* Space before form */
+}
+
+.info-block {
+    text-align: center;
+    background-color: #12121f; /* Darker background for blocks */
+    padding: 30px 20px;
+    border-radius: 8px;
+    border: 1px solid #2a2a3e;
+}
+
+.info-block i {
+    font-size: 2.5em; /* Larger icons */
+    color: #6200ea;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.info-block h3 {
+    color: #eee;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.info-block p {
+    color: #aaa;
+    line-height: 1.7;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+ .info-block a {
+     color: #7e3ff2;
+     text-decoration: none;
+     transition: color 0.2s ease;
+ }
+  .info-block a:hover {
+      text-decoration: none;
+      color: #a06eff; /* Lighter hover */
+  }
+
+/* Contact Form Section */
+.contact-form-section {
+    margin-top: 30px;
+    padding-top: 40px;
+    border-top: 1px solid #444; /* Softer border */
+}
+
+.contact-form-section h2 {
+    color: #fff;
+    margin-bottom: 35px; /* More space */
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px; /* More space between fields */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px; /* More space below label */
+    font-weight: 500;
+    color: #bbb;
+    font-size: 0.95em;
+}
+
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px; /* More padding */
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+     outline: none;
+     border-color: #6200ea;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px; /* Taller textarea */
+}
+
+.submit-button {
+    background-color: #6200ea;
+    color: white;
+    padding: 14px 35px; /* Larger button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0 auto; /* Center button */
+}
+.submit-button:hover {
+    background-color: #7e3ff2;
+}
+
+/* Footer is styled by footer.css */

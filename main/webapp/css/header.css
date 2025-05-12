@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+/* --- Styles ONLY for elements INSIDE the <header class="app-header"> --- */
+
+.app-header {
+    /* Basic appearance defined here */
+    background-color: #1f1f3a;
+    color: #fff;
+    padding: 0 30px; /* Use padding for spacing, remove fixed height if content varies */
+    border-bottom: 1px solid #333;
+    height: 60px; /* Example fixed height */
+    box-sizing: border-box;
+
+    /* Internal Layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left, .header-center, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Left Section --- */
+.header-left {
+    gap: 40px;
+    padding-left: 10px; /* Space between logo and potential market status */
+}
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6em; /* Slightly larger */
+    font-weight: 600; /* Bolder */
+    letter-spacing: 0.5px;
+    /* Add specific font family if needed */
+}
+/* Add .market-status styles if implemented */
+
+
+/* --- Center Section (Navigation) --- */
+.header-center {
+    flex-grow: 1; /* Allow center to push left/right apart */
+    justify-content: center; /* Center navigation links */
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 35px; /* Spacing between nav items */
+}
+.main-nav a {
+    color: #bbb; /* Slightly dimmer default color */
+    text-decoration: none;
+    padding: 5px 0;
+    font-weight: 500;
+    font-size: 0.95em;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: #fff;
+    border-bottom-color: #6200ea; /* Accent color for active/hover */
+}
+
+/* --- Right Section (User Actions) --- */
+.header-right {
+    gap: 20px; /* Spacing between elements */
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between profile link and logout */
+}
+.user-profile-link {
+     color: #eee;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     gap: 10px; /* Space between icon and name */
+     font-weight: 500;
+     transition: color 0.2s ease;
+}
+ .user-profile-link i {
+     font-size: 1.6em; /* Larger user icon */
+     color: #aaa; /* Icon color */
+     transition: color 0.2s ease;
+ }
+ .user-profile-link:hover {
+     color: #fff;
+ }
+ .user-profile-link:hover i {
+     color: #fff;
+ }
+
+/* Buttons */
+.logout-button, .login-button, .signup-button {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    border: 1px solid transparent;
+    background: none;
+    color: #fff;
+    font-size: 0.9em;
+    line-height: 1.4; /* Ensure consistent height */
+}
+
+/* Specific button styles */
+ .logout-button {
+     color: #ff6b6b; /* Reddish for logout */
+     padding: 8px 10px; /* Less padding if desired */
+     border: none; /* No border for logout typically */
+ }
+ .logout-button:hover {
+     color: #ff4d4d;
+     background-color: rgba(255, 77, 77, 0.1); /* Subtle hover background */
+ }
+
+.login-button {
+    border-color: #888; /* Grey border */
+    color: #ccc;
+}
+.login-button:hover {
+     border-color: #fff;
+     background-color: rgba(255, 255, 255, 0.1);
+     color: #fff;
+}
+
+.signup-button {
+     background-color: #6200ea; /* Primary accent */
+     border-color: #6200ea;
+     color: #fff;
+}
+.signup-button:hover {
+     background-color: #7e3ff2;
+     border-color: #7e3ff2;
+}
+
+/* Header Icons (e.g., Notifications) */
+.header-icon {
+    color: #aaa;
+    font-size: 1.3em;
+    text-decoration: none;
+    padding: 5px;
+    position: relative; /* For potential notification badges */
+    transition: color 0.2s ease;
+}
+.header-icon:hover {
+    color: #fff;
+}
+/* Add styles for .notification-bell if implemented */
+
+/* Add styles for header search bar if implemented */
+.header-search {
+    /* Example styles */
+    position: relative;
+}
+.header-search input {
+    background-color: #12121f; /* Darker background */
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 8px 15px 8px 35px; /* Space for icon */
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.9em;
+    width: 250px; /* Adjust width */
+    transition: border-color 0.2s ease;
+}
+.header-search input:focus {
+    outline: none;
+    border-color: #6200ea;
+}
+.header-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/* --- Styles ONLY for elements INSIDE the <footer class="app-footer"> --- */
+
+.app-footer {
+    background-color: #12121f; /* Match sidebar/darker background */
+    color: #888; /* Dimmer text color */
+    padding: 25px 30px; /* More padding */
+    text-align: center;
+    border-top: 1px solid #2a2a3e; /* Softer border */
+    font-size: 0.85em; /* Slightly smaller text */
+    box-sizing: border-box;
+    margin-top: auto; /* Keep this if footer needs pushing down */
+}
+
+.app-footer p {
+    margin: 0 0 15px 0; /* More space below copyright */
+}
+
+.footer-links a {
+    color: #aaa; /* Link color */
+    text-decoration: none;
+    margin: 0 10px; /* More spacing */
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #7e3ff2; /* Accent hover color */
+}
+
+.social-media {
+    margin-top: 20px; /* More space above social icons */
+}
+
+.social-media a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1.3em; /* Slightly larger icons */
+    margin: 0 12px;
+    transition: color 0.2s ease;
+}
+
+.social-media a:hover {
+    color: #7e3ff2; /* Accent hover color */
+}

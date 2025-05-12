@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* Ensure this class wraps the entire page content in the JSP */
+.page-container {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: #0b0b1a;
+   color: #e0e0e0;
+   font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header/Footer styling comes from their respective CSS */
+
+.main-content.about-us-content {
+    flex-grow: 1;
+    max-width: 900px; /* Limit width for readability */
+    margin: 40px auto; /* Center content */
+    padding: 40px 50px; /* More padding */
+    background-color: #1f1f3a; /* Panel background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.about-us-content h1 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444; /* Softer border */
+    font-size: 2em; /* Larger title */
+    font-weight: 600;
+}
+
+.about-us-content section {
+    margin-bottom: 40px; /* Space between sections */
+}
+
+.about-us-content h2 {
+    color: #eee;
+    margin-top: 0; /* Remove top margin if inside section */
+    margin-bottom: 20px;
+    font-size: 1.6em; /* Larger section headings */
+    font-weight: 600;
+    border-left: 4px solid #6200ea; /* Accent border */
+    padding-left: 15px;
+}
+
+.about-us-content p {
+    line-height: 1.8; /* Increase line height */
+    color: #ccc;
+    margin-bottom: 18px;
+    font-size: 1em;
+}
+
+.about-us-content ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.about-us-content li {
+    margin-bottom: 12px;
+    color: #ccc;
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+}
+
+.about-us-content li::before {
+    content: "\f005"; /* Example: FontAwesome star icon */
+    font-family: "Font Awesome 6 Free"; /* Use FontAwesome */
+    font-weight: 900; /* Solid icon */
+    color: #6200ea; /* Accent color */
+    position: absolute;
+    left: 0;
+    top: 4px; /* Adjust vertical alignment */
+    font-size: 0.9em;
+}
+
+/* Footer is styled by footer.css */
