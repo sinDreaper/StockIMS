@@ -58,15 +58,7 @@ public class UserProfileController extends HttpServlet {
      * Handles profile update form submission (Optional - not implemented in detail)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO: Implement profile update logic
-        // 1. Get parameters (name, contact, dob etc.)
-        // 2. Validate input
-        // 3. Get user ID and role from session
-        // 4. Create corresponding update query in DBController (e.g., updateCustomerDetails, updateAdminDetails)
-        // 5. Call DBController method
-        // 6. Set success/error message
-        // 7. Update session name if changed: session.setAttribute(StringUtils.SESSION_USER_NAME, newName);
-        // 8. Redirect back to profile page (use GET to prevent re-submission)
+        
 
         HttpSession session = request.getSession(false);
          if (session != null) {

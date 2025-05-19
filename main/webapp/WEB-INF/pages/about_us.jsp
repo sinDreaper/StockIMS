@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <title>About Us - ChainX</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/about_us.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css" />
+
 </head>
 <body>
      <div class="page-container">

@@ -3,12 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> <%-- Added for string functions like endsWith --%>
 <%@ page import="com.stockx.util.StringUtils" %>
 
-<%--
-    This header is included in various pages.
-    It uses sessionScope attributes set during login (or cleared on logout)
-    to determine what to display.
-    It relies on 'header.css' for styling.
---%>
+
 
 <header class="app-header">
     

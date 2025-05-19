@@ -160,7 +160,7 @@ public class PasswordEncryptionWithAes {
      // --- Optional: Main method for testing/generating initial hash ---
     
     public static void main(String[] args) {
-        String email = "admin@stockx.com";
+        String email = "admin@gmail.com";
         String plainPassword = "admin@12"; // Replace with desired password
 
         String encryptedPassword = encrypt(plainPassword, email);

@@ -3,7 +3,7 @@
 /* Styles for the landing.jsp */
 
 body.landing-body {
-    background-color: #0B0B1A; /* Match screenshot dark background */
+    background-color: #0B0B1A; 
     color: #e0e0e0;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, /* System fonts */
                  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -29,13 +29,9 @@ body.landing-body {
 .hero-section {
     text-align: center;
     padding: 100px 20px 80px 20px;
-    /* Use a very dark background, maybe slightly lighter than body */
     background-color: #11111d; /* Slightly lighter than pure black/dark blue */
     color: #fff;
-    /* Remove background image if not desired */
-    /* background: linear-gradient(rgba(18, 18, 31, 0.85), rgba(18, 18, 31, 0.95)), url('../images/hero-background.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center center; */
+    
 }
 
 .hero-section h1 {

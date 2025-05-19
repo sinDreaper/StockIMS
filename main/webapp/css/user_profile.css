@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0b1a;
+}
+
+.page-container {
+    min-height: 100vh;
+    background-color: #0b0b1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #0b0b1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
 /* Ensure this class wraps the entire page content in the JSP */
 .profile-page-container {
     display: flex;

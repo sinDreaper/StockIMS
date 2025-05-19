@@ -30,10 +30,7 @@
                     </ul>
                 </nav>
                 <div class="sidebar-bottom">
-                    <div class="dark-mode-toggle">
-                        <i class="fas fa-moon"></i> Dark Mode 
-                        <label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
-                    </div>
+                    
                     <form action="${pageContext.request.contextPath}${StringUtils.SERVLET_URL_LOGOUT}" method="post">
                         <button type="submit" class="logout-button-sidebar"><i class="fas fa-sign-out-alt"></i> Logout</button>
                     </form>

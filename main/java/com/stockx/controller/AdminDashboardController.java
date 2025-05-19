@@ -53,12 +53,5 @@ public class AdminDashboardController extends HttpServlet {
         request.getRequestDispatcher(StringUtils.PAGE_URL_ADMIN_DASHBOARD).forward(request, response);
     }
 
-    /**
-     * POST is typically handled by a dedicated action servlet (StockActionServlet)
-     * for Add/Update/Delete to keep this controller focused on displaying the dashboard.
-     */
-    // protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    //     // Delegate to doGet or handle specific POST actions if necessary (not recommended here)
-    //     doGet(request, response);
-    // }
+    
 }

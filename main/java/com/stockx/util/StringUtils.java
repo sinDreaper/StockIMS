@@ -38,6 +38,7 @@ public class StringUtils {
      public static final String QUERY_GET_ACTIVE_STOCKS = "SELECT Stock_Id, Symbol, Company_Name, Instrument_Id, Total_Shares, Listing_Date, Opening_Price, Closing_Price, Category, Exchange, Status, Date_Added, Last_Updated FROM Stock WHERE Status = 'Active' ORDER BY Company_Name ASC";
     public static final String QUERY_UPDATE_STOCK = "UPDATE Stock SET Symbol = ?, Company_Name = ?, Instrument_Id = ?, Total_Shares = ?, Listing_Date = ?, Opening_Price = ?, Closing_Price = ?, Category = ?, Exchange = ?, Status = ? WHERE Stock_Id = ?";
     public static final String QUERY_DELETE_STOCK = "DELETE FROM Stock WHERE Stock_Id = ?";
+    public static final String QUERY_GET_ALL_STOCKS_BASE = "SELECT Stock_Id, Symbol, Company_Name, Instrument_Id, Total_Shares, Listing_Date, Opening_Price, Closing_Price, Category, Exchange, Status, Date_Added, Last_Updated FROM Stock";
     // End: SQL Queries
 
     // Start: Parameter names (Login/Register/User/Stock)

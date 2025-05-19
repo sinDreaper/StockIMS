@@ -13,47 +13,43 @@ import com.stockx.database.DBController;
 import com.stockx.model.StockModel;
 import com.stockx.util.StringUtils;
 
-/**
- * @author Prashant Rijal
- * LMU ID: 23048683
- */
-
 @WebServlet(StringUtils.SERVLET_URL_CUSTOMER_DASHBOARD)
 public class CustomerDashboardController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = Logger.getLogger(CustomerDashboardController.class.getName());
     private DBController dbController;
 
-     @Override
+    @Override
     public void init() throws ServletException {
         super.init();
         this.dbController = new DBController();
     }
 
-
-    /**
-     * Displays the customer dashboard with *active* stocks.
-     */
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOGGER.fine("Customer Dashboard doGet called.");
 
-        // Fetch only active stocks for customers
-        List<StockModel> stockList = dbController.getActiveStocks();
+        String viewParam = request.getParameter("view");
+        List<StockModel> stockList;
 
-         if (stockList == null) {
-            LOGGER.severe("Failed to retrieve active stock list for customer dashboard.");
+        if ("stocks".equals(viewParam)) {
+            String sortBy = request.getParameter("sort_by");
+            String sortOrder = request.getParameter("sort_order");
+            String filterCategory = request.getParameter("filter_category");
+
+            LOGGER.fine("Fetching all stocks with sort: " + sortBy + " " + sortOrder + ", filterCategory: " + filterCategory);
+            stockList = dbController.getAllStocksFilteredAndSorted(sortBy, sortOrder, filterCategory, null);
+        } else {
+            LOGGER.fine("Fetching active stocks for default dashboard view.");
+            stockList = dbController.getActiveStocks();
+        }
+
+        if (stockList == null) {
+            LOGGER.severe("Failed to retrieve stock list. View: " + (viewParam != null ? viewParam : "default"));
             request.setAttribute(StringUtils.MESSAGE_ERROR, "Could not load stock data. Please try again later.");
         }
 
-        // Set the list as a request attribute
         request.setAttribute(StringUtils.REQ_ATTRIBUTE_STOCKS, stockList);
-
-        // Forward to the JSP page
         request.getRequestDispatcher(StringUtils.PAGE_URL_CUSTOMER_DASHBOARD).forward(request, response);
     }
-
-    // POST not typically needed for a read-only customer dashboard
-    // protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    //     doGet(request, response);
-    // }
 }

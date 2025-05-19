@@ -30,6 +30,7 @@ public class ContactUsController extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO: Implement contact form handling (e.g., send email, save to DB)
+    	
         String name = request.getParameter("fullName");
         String email = request.getParameter("emailAddress");
         String subject = request.getParameter("subject");
@@ -38,11 +39,8 @@ public class ContactUsController extends HttpServlet {
         LOGGER.info("Contact form submitted by: " + name + " (" + email + ")");
         // Add actual logic here (e.g., email sending)
 
-        request.setAttribute(StringUtils.MESSAGE_SUCCESS, "Your message has been received (functionality pending)."); // Placeholder
+        request.setAttribute(StringUtils.MESSAGE_SUCCESS, "Your message has been received"); // Placeholder
         request.getRequestDispatcher(StringUtils.PAGE_URL_CONTACT_US).forward(request, response);
-        // OR redirect after successful processing:
-        // HttpSession session = request.getSession();
-        // session.setAttribute(StringUtils.MESSAGE_SUCCESS, "Message sent successfully!");
-        // response.sendRedirect(request.getContextPath() + StringUtils.SERVLET_URL_CONTACT_US);
+
     }
 }
